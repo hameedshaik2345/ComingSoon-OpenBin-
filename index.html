@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenBin</title>
+
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description"
+    content="OpenBin Solutions - We are launching soon! Building smart, innovative and sustainable solutions.">
+  <meta property="og:title" content="OpenBin Solutions | Coming Soon">
+  <meta property="og:description"
+    content="Our official website is launching soon. Stay tuned for exciting innovations!">
+  <meta property="og:image" content="logo-full.png">
+  <meta property="og:url" content="https://openbinsolutions.in">
+
+  <!-- Favicon: Clean O Symbol Icon for Browser Tab -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-blue: #0056D2;
+      --accent-blue: #0084FF;
+      --dark-navy: #0A192F;
+      --text-muted: #5C6F84;
+      --border-color: #E2E8F0;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Plain, pleasant, calming modern background */
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #1e293b;
+      background: linear-gradient(145deg, #f4f7fb 0%, #e9eff7 100%);
+      position: relative;
+      overflow: hidden;
+      /* Zero scroll on full screen */
+    }
+
+    /* Invisible spacer at top to balance footer */
+    .top-spacer {
+      flex-shrink: 0;
+      height: 1rem;
+    }
+
+    /* Centered Hero Section holding both Logo and Card */
+    main {
+      position: relative;
+      z-index: 10;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.35rem;
+      /* Balanced gap between logo and card */
+      padding: 0.5rem 1.25rem;
+      width: 100%;
+      max-width: 620px;
+      min-height: 0;
+    }
+
+    /* Prominent, Bigger, Centered Logo Card */
+    .logo-container {
+      background: #ffffff;
+      padding: 0.9rem 2.6rem;
+      border-radius: 22px;
+      box-shadow: 0 10px 28px -6px rgba(0, 86, 210, 0.12),
+        0 0 0 1px rgba(226, 232, 240, 0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .logo-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px -6px rgba(0, 86, 210, 0.18);
+    }
+
+    .logo-full-img {
+      height: 64px;
+      /* Big, crisp, and prominent */
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Main Content Card */
+    .content-card {
+      width: 100%;
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 28px;
+      padding: 2.15rem 2.25rem;
+      box-shadow: 0 18px 40px -15px rgba(10, 25, 47, 0.07),
+        0 0 0 1px rgba(0, 86, 210, 0.04);
+      animation: fadeIn 0.75s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, rgba(0, 86, 210, 0.08), rgba(0, 132, 255, 0.12));
+      color: var(--primary-blue);
+      padding: 5px 15px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(0, 86, 210, 0.15);
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-blue);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background-color: var(--accent-blue);
+      opacity: 0.5;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(2);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.025em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #0056D2 0%, #0084FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.6rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Contact Action Button */
+    .cta-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 11px 26px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px -3px rgba(0, 86, 210, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px -3px rgba(0, 86, 210, 0.45);
+    }
+
+    .cta-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Highlights Pills */
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 1.25rem;
+      border-top: 1px dashed rgba(203, 213, 225, 0.8);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #f8fafc;
+      padding: 5px 13px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .pill-icon {
+      color: var(--primary-blue);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 10;
+      padding: 0.5rem 1rem 1.15rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.825rem;
+      flex-shrink: 0;
+    }
+
+    .contact-line {
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-line a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      font-size: 0.775rem;
+      color: #94a3b8;
+    }
+
+    /* Laptop & compact height screens */
+    @media (max-height: 740px) {
+      main {
+        gap: 0.9rem;
+      }
+
+      .logo-full-img {
+        height: 52px;
+      }
+
+      .logo-container {
+        padding: 0.7rem 2rem;
+      }
+
+      .content-card {
+        padding: 1.65rem 1.85rem;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .tagline {
+        margin-bottom: 1.25rem;
+      }
+
+      .cta-container {
+        margin-bottom: 1.25rem;
+      }
+
+      .highlights {
+        padding-top: 1rem;
+      }
+
+      footer {
+        padding-bottom: 0.75rem;
+      }
+    }
+
+    /* Mobile screens */
+    @media (max-width: 640px) {
+      body {
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .top-spacer {
+        display: none;
+      }
+
+      main {
+        padding: 2rem 1.25rem 1.5rem;
+        gap: 1.25rem;
+      }
+
+      .logo-full-img {
+        height: 48px;
+      }
+
+      .logo-container {
+        padding: 0.75rem 1.8rem;
+      }
+
+      .content-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 22px;
+      }
+
+      .highlights {
+        gap: 6px;
+      }
+
+      .pill {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top spacer for balanced vertical alignment -->
+  <div class="top-spacer"></div>
+
+  <!-- Vertically Centered Main Section (Logo + Hero Card) -->
+  <main>
+    <!-- Centered, Prominent Full Logo -->
+    <div class="logo-container" title="OpenBin Solutions">
+      <img src="logo-full.png" alt="OpenBin Solutions Logo" class="logo-full-img">
+    </div>
+
+    <!-- Hero Card -->
+    <div class="content-card">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        <span>UNDER CONSTRUCTION</span>
+      </div>
+
+      <h1>We Are <span class="gradient-text">Coming Soon!</span></h1>
+
+      <p class="tagline">
+        We're currently building something extraordinary at <strong>OpenBin Solutions</strong>. Our new platform will be
+        launching shortly.
+      </p>
+
+      <!-- Get in Touch Action Button -->
+      <div class="cta-container">
+        <a href="mailto:info@openbinsolutions.in" class="cta-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Get in Touch</span>
+        </a>
+      </div>
+
+      <!-- Feature / Brand Highlights -->
+      <div class="highlights">
+        <div class="pill">
+          <span class="pill-icon">⚡</span>
+          <span>Innovative Solutions</span>
+        </div>
+        <div class="pill">
+          <span class="pill-icon">🌱</span>
+          <span>Smart & Sustainable</span>
+        </div>
+        <div class="pill">
+          <span class="pill-icon">🔒</span>
+          <span>Reliable Platform</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="contact-line">
+      Inquiries or partnerships:
+      <a href="mailto:info@openbinsolutions.in">openbinsolutions@gmail.com</a>
+    </div>
+    <div class="copyright">
+      &copy; <span id="currentYear"></span> OpenBin Solutions. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
